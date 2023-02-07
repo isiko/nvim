@@ -5,10 +5,6 @@ local sorters = require 'telescope.sorters'
 
 local action_state = require 'telescope.actions.state'
 
---require 'nvim-web-devicons'.setup({
---    color_icons = false,
---    default = true
---})
 
 local function SetTheme(color)
     if color == nil then return false end
@@ -20,6 +16,12 @@ end
 local themes = {
     ['gruvbox'] = function ()
         SetTheme('gruvbox')
+    end,
+    ['kit'] = function ()
+        SetTheme("kit")
+    end,
+    ['gruvbox'] = function ()
+        SetTheme("gruvbox")
     end,
     ['rosé-pine'] = function()
         require('rose-pine').setup({ disable_background = false })
@@ -50,6 +52,7 @@ local mini = {
         width = 0.3,
         prompt_position = "top"
     },
+
     sorting_strategy = "ascending",
 }
 
@@ -66,6 +69,7 @@ end
 local opts = {
     finder = finders.new_table(ThemeNames()),
     sorter = sorters.get_generic_fuzzy_sorter({}),
+
     attach_mappings = function(prompt_bufnr, map)
         map("i", "<CR>", function()
             local selected = action_state.get_selected_entry()
@@ -82,6 +86,6 @@ function SetColor()
     colors:find()
 end
 
-themes['no-clown-fiesta']()
+themes['gruvbox']()
 
 vim.api.nvim_create_user_command('Color', SetColor, { nargs = 0 })

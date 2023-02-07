@@ -33,6 +33,8 @@ Kmap("n", "<leader>w", ":w<CR>", opts)
 -- move lines
 Kmap("v", "J", ":m '>+1<CR>gv=gv", opts)
 Kmap("v", "K", ":m '<-2<CR>gv=gv", opts)
+Kmap("v", "<TAB>", ">gv", opts)
+Kmap("v", "<S-TAB>", "<gv", opts)
 
 Kmap("i", "<A-j>", "<Down>", opts)
 Kmap("i", "<A-k>", "<Up>", opts)
@@ -56,3 +58,20 @@ Kmap("n", "<leader>ß",
 
 -- Toggle trouble
 Kmap("n", "<leader>ü", ":TroubleToggle<CR>", opts);
+
+-- [GIT] Fugitive
+-- Status
+Kmap("n", "<leader>gs", "<cmd>Git<CR>")
+Kmap("n", "<leader>gl", "<cmd>Git log<CR>")
+
+-- Commits
+Kmap("n", "<leader>ga", "<cmd>Git add .<CR>", {desc = "[g]it add ."})
+Kmap("n", "<leader>gc", "<cmd>Git commit<CR>", {desc = "[g]it commit"})
+Kmap("n", "<leader>gca", "<cmd>Git commit --amend<CR>", {desc = "[g]it commit --amend"})
+Kmap("n", "<leader>gp", "<cmd>Git push<CR>", {desc = "[g]it push"})
+Kmap("n", "<leader>gpf", "<cmd>Git push --force<CR>", {desc = "[g]it push --force"})
+Kmap("n", "<leader>gd", "<cmd>Git diff<CR>", {desc = "[g]it diff"})
+
+-- [NVIM-TREE]
+Kmap("n", "<leader>tt", "<cmd>NvimTreeToggle<CR>", {desc = "toggle [t]ree"})
+Kmap("n", "<leader>tr", "<cmd>NvimTreeRefresh<CR>", {desc = "refresh [t]ree"})

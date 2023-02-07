@@ -32,11 +32,13 @@ return require('packer').startup(function(use)
     use { 'nvim-telescope/telescope-ui-select.nvim' }
 
     -- color schemes
-    use({ 'rose-pine/neovim', as = 'rose-pine' })
-    use 'aktersnurra/no-clown-fiesta.nvim'
     use 'd00h/nvim-rusticated'
     use 'morhetz/gruvbox'
-
+    use ({ 'rose-pine/neovim', as = 'rose-pine' })
+    use 'aktersnurra/no-clown-fiesta.nvim'
+    use 'taDachs/kit.vim'
+    use 'ellisonleao/gruvbox.nvim'
+    
     -- Icons
     use 'kyazdani42/nvim-web-devicons'
 
@@ -75,6 +77,30 @@ return require('packer').startup(function(use)
         use 'tpope/vim-fugitive'
         use 'airblade/vim-gitgutter'
 
+        -- Copilot
+        use {
+            "zbirenbaum/copilot.lua",
+            cmd = "Copilot",
+            event = "InsertEnter",
+            config = function()
+                require("isiko404.copilot")
+            end,
+        } 
+
         -- Obsidian Stuff
         use 'epwalsh/obsidian.nvim'
+
+        -- Discord
+        use 'andweeb/presence.nvim'
+
+        -- Sudo Rights Stuff
+        use 'lambdalisue/suda.vim'
+
+        -- TreeView
+        use {
+            'nvim-tree/nvim-tree.lua',
+            requires = {
+                {'nvim-tree/nvim-web-devicons'}
+            }
+        }
     end)
