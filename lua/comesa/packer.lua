@@ -67,7 +67,14 @@ return require('packer').startup(function(use)
         }
     }
 
-    -- Lua line
-    use 'nvim-lualine/lualine.nvim'
-    use 'arkav/lualine-lsp-progress'
-end)
+        -- Lua line
+        use 'nvim-lualine/lualine.nvim'
+        use 'arkav/lualine-lsp-progress'
+
+        -- Fugitive (Git Integration)
+        use 'tpope/vim-fugitive'
+        use 'airblade/vim-gitgutter'
+
+        -- Obsidian Stuff
+        use 'epwalsh/obsidian.nvim'
+    end)
