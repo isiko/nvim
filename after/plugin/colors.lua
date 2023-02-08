@@ -4,7 +4,6 @@ local finders = require 'telescope.finders'
 local sorters = require 'telescope.sorters'
 
 local action_state = require 'telescope.actions.state'
-
 --require 'nvim-web-devicons'.setup({
 --    color_icons = false,
 --    default = true
@@ -12,28 +11,31 @@ local action_state = require 'telescope.actions.state'
 
 -- [Settings]
 local themeName = 'no-clown-fiesta'
-local disable_background = true 
+local disable_background = true
 
+local themes = {}
 local function SetTheme(color)
     if color == nil then return false end
 
     color = color or 'rose-pine'
     vim.cmd.colorscheme(color)
 
-    if disable_background then
-        vim.api.nvim_set_hl(0, "Normal", {bg = "none"})
-        vim.api.nvim_set_hl(0, "NormalFloat", {bg = "none"})
-    end
+    vim.cmd.hi("Normal guibg=NONE cterm=NONE")
+    vim.cmd.hi("NormalFloat guibg=NONE cterm=NONE")
+    vim.cmd.hi("SignColumn guibg=NONE")
+    vim.cmd.hi("GitGutterAdd guibg=transparent")
+    vim.cmd.hi("GitGutterDelete guibg=transparent")
+    vim.cmd.hi("GitGutterChange guibg=transparent")
 end
 
 local themes = {
     ['rosé-pine'] = function()
-        require('rose-pine').setup({ disable_background = false })
+        require('rose-pine').setup({ disable_background = disable_background })
         SetTheme('rose-pine')
     end,
     ['no-clown-fiesta'] = function()
         require("no-clown-fiesta").setup({
-            transparent = false, -- Enable this to disable the bg color
+            transparent = disable_background, -- Enable this to disable the bg color
             styles = {
                 comments = {},
                 keywords = {},
