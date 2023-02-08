@@ -10,11 +10,20 @@ local action_state = require 'telescope.actions.state'
 --    default = true
 --})
 
+-- [Settings]
+local themeName = 'no-clown-fiesta'
+local disable_background = true 
+
 local function SetTheme(color)
     if color == nil then return false end
 
     color = color or 'rose-pine'
     vim.cmd.colorscheme(color)
+
+    if disable_background then
+        vim.api.nvim_set_hl(0, "Normal", {bg = "none"})
+        vim.api.nvim_set_hl(0, "NormalFloat", {bg = "none"})
+    end
 end
 
 local themes = {
@@ -76,6 +85,6 @@ function SetColor()
     colors:find()
 end
 
-themes['no-clown-fiesta']()
+themes[themeName]()
 
 vim.api.nvim_create_user_command('Color', SetColor, { nargs = 0 })
