@@ -38,6 +38,8 @@ return require('packer').startup(function(use)
     use 'aktersnurra/no-clown-fiesta.nvim'
     use 'taDachs/kit.vim'
     use 'ellisonleao/gruvbox.nvim'
+    use 'chriskempson/base16-vim'
+    use 'chriskempson/vim-tomorrow-theme'
     
     -- Icons
     use 'kyazdani42/nvim-web-devicons'
@@ -68,6 +70,8 @@ return require('packer').startup(function(use)
             -- { 'simrat39/rust-tools.nvim' }
         }
     }
+
+        use { "mfussenegger/nvim-jdtls", ft = { "java" }}
 
         -- Lua line
         use 'nvim-lualine/lualine.nvim'

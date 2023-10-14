@@ -20,6 +20,11 @@ local themes = {
     ['kit'] = function ()
         SetTheme("kit")
     end,
+    ['Base 16'] = function () SetTheme("base16-default-dark") end,
+    ['Tomorrow'] = function () SetTheme("Tomorrow-Night") end,
+    ['Tomorrow Bright'] = function () SetTheme("Tomorrow-Night-Bright") end,
+    ['Tomorrow Base 16'] = function () SetTheme("base16-tomorrow-night") end,
+    ['kit'] = function () SetTheme("kit") end,
     ['gruvbox'] = function ()
         SetTheme("gruvbox")
     end,
@@ -86,6 +91,6 @@ function SetColor()
     colors:find()
 end
 
-themes['gruvbox']()
+themes['Tomorrow Base 16']()
 
 vim.api.nvim_create_user_command('Color', SetColor, { nargs = 0 })

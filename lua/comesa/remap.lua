@@ -45,9 +45,9 @@ Kmap("i", "<A-l>", "<Right>", opts)
 Kmap("n", "°", ":Alpha<CR>")
 
 -- buffer keys
-Kmap("n", "bd", "<cmd>bd<CR>", opts)
-Kmap("n", "bp", "<cmd>bp<CR>", opts)
-Kmap("n", "bn", "<cmd>bn<CR>", opts)
+Kmap("n", "Bd", "<cmd>bd<CR>", opts)
+Kmap("n", "Bp", "<cmd>bp<CR>", opts)
+Kmap("n", "Bn", "<cmd>bn<CR>", opts)
 
 -- open undotree (maybe move into after-directory
 Kmap("n", "<leader>u", "<cmd>UndotreeToggle<CR>", opts)
