@@ -6,9 +6,9 @@ lsp.set_preferences({
     suggest_lsp_servers = true
 })
 
-lsp.ensure_installed({
-    'lua_ls'
-})
+--lsp.ensure_installed({
+--    'lua_ls'
+--})
 
 lsp.use('rust_analyzer', {
     diagnostic = { experimental = { enable = true } }
@@ -23,9 +23,9 @@ local cmp_mappings = lsp.defaults.cmp_mappings({
     ['<C-Space>'] = cmp.mapping.complete(),
 })
 
-lsp.setup_nvim_cmp({
-    mapping = cmp_mappings
-})
+--lsp.setup_nvim_cmp({
+--    mapping = cmp_mappings
+--})
 
 lsp.on_attach(function(_, bufnr)
     local opts = { buffer = bufnr, remap = true }
