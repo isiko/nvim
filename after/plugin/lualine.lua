@@ -15,6 +15,7 @@ require('lualine').setup {
                     spinner = { pre = '', post = '' },
                 },
             }
+        },
         lualine_y = {
             'lsp_progress'
         }
